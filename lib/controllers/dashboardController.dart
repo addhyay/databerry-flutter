@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sales_cast/pages/loginScreen.dart';
+import 'package:sales_cast/services/services.dart';
 import 'package:sales_cast/utils/colorLib.dart';
 import 'package:sales_cast/utils/stringLib.dart';
 import 'package:sales_cast/utils/txtstyleLib.dart';
@@ -16,6 +17,9 @@ class DashboardScreenController extends GetxController {
   RxBool tempUnit = false.obs;
   RxDouble temp = 0.0.obs;
   String storeTypeTxt = "A", holidayTxt = "TRUE";
+
+  
+
 
   @override
   void onInit() {
@@ -95,9 +99,33 @@ class DashboardScreenController extends GetxController {
     );
   }
 
-  void checkAndPredict(BuildContext context) {
+  void checkAndPredict(BuildContext context)  async {
     bool isValid = dashboardFormKey.currentState!.validate();
     if (!isValid) return;
     //* Do something about sending info to json and so on
+    final formData = {
+      "store":  storeController.text.toUpperCase().trim(),
+      "storeType":  storeTypeTxt.toUpperCase().trim(),
+      "dept":  departmentController.text.toUpperCase().trim(),
+      "holiday":  holidayTxt.toUpperCase().trim(),
+      "temp": tempratureController.text.toUpperCase().trim()
+    };
+    String url  = 'http://127.0.0.1:5000/';
+    var res;
+    var roughRes;
+    print("Harish");
+    res = await fetchData(url);
+
+    roughRes = await predictSales(url, formData, context);
+    print("Harish2");
+    print("Hello: $res");
+    print("Rushikesh: $roughRes");
+
+
+
+
+
+
+    print(storeController.text.toUpperCase().trim());
   }
 }
