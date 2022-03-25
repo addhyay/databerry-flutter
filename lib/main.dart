@@ -31,18 +31,18 @@ class SalesCast extends StatelessWidget {
         theme: ThemeData(
           primaryColor: MaterialColorLib.primaryBlueSwatch,
         ),
-        // home: StreamBuilder(
-        //   stream: FirebaseAuth.instance.authStateChanges(),
-        //   builder: (context, snapshot) {
-        //     if (snapshot.hasData) return DashboardPage();
-        //     if (snapshot.connectionState == ConnectionState.waiting)
-        //       return CircularLoading();
-        //     else
-        //       return LoginPage();
-        //   },
-        // ),
+        home: StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) return DashboardPage();
+            if (snapshot.connectionState == ConnectionState.waiting)
+              return CircularLoading();
+            else
+              return LoginPage();
+          },
+        ),
 
-        home: DashboardPage(),
+        // home: DashboardPage(),
         // home: DummyPage(),
       ),
     );
