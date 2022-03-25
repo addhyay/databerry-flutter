@@ -252,6 +252,7 @@ class DashboardPage extends StatelessWidget {
                             ),
                             SizedBox(height: DimentionLib.h80),
                             InkWell(
+                              onTap: () => controller.checkAndPredict(context),
                               child: BlueBtn(
                                 txt: StringLib.predictSale,
                               ),

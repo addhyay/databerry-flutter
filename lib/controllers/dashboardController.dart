@@ -94,4 +94,10 @@ class DashboardScreenController extends GetxController {
       ),
     );
   }
+
+  void checkAndPredict(BuildContext context) {
+    bool isValid = dashboardFormKey.currentState!.validate();
+    if (!isValid) return;
+    //* Do something about sending info to json and so on
+  }
 }
