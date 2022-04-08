@@ -55,6 +55,7 @@ class StringLib {
   static final String departmentHint = "Enter department number";
   static final String holidayHint = "Select holiday status";
   static final String tempratureHint = "Enter temprature of the day";
+  static final String enterKeywords = "Enter keywords...";
 
   //error strings
   static final String userNotFound = "User not found";
@@ -68,4 +69,28 @@ class StringLib {
   static final String subStr404 = "We are working on it...";
   static final String invalidStore = "Please enter valid store number";
   static final String invalidDepartment = "Please enter valid department number";
+
+  //tab bar Strings
+  static final String dashboardTxt = "Dashboard";
+  static final String filtersTxt = "Filters";
+  static final String notificationTxt = "Notifications";
+  static final String aboutUsTxt = "About Us";
+  static final String systemTxt = "SYSTEM";
+  static final String apperanceTxt = "Appearance";
+  static final String settingTxt = "Settings";
+
+  //card Strings
+  static final String totalSales = 'Total Sales';
+  static final String expectedSales = "Expected Sales";
+  static final String actualSales = "Actual Sales";
+  static final String totalProductsSold = "Total Products Sold";
+  static final String lastMonth = "Last month"; 
+  static final String last6mo  = "Last 6 months";
+  static final String pervious = "Previous";
+
+  //chart Strings
+  static final String monthlyAvg = "Monthly Average Sales";
+  static final String yearlySale = "Yearly Sales";
+  static final String totalYearlySales = "Total Sales of 40+ Walmart Store since last 5 years";
+  static final String subtitleMonthlySales = "Daywise sales done by point distributions";
 }

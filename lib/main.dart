@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sales_cast/controllers/loginController.dart';
+import 'package:sales_cast/pages/dashboardScreen_v2.dart';
 import 'package:sales_cast/pages/dummyScreen.dart';
 import 'package:sales_cast/pages/loginScreen.dart';
 import 'package:sales_cast/pages/dashboardScreen.dart';
@@ -31,19 +32,20 @@ class SalesCast extends StatelessWidget {
         theme: ThemeData(
           primaryColor: MaterialColorLib.primaryBlueSwatch,
         ),
-        home: StreamBuilder(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) return DashboardPage();
-            if (snapshot.connectionState == ConnectionState.waiting)
-              return CircularLoading();
-            else
-              return LoginPage();
-          },
-        ),
+        // home: StreamBuilder(
+        //   stream: FirebaseAuth.instance.authStateChanges(),
+        //   builder: (context, snapshot) {
+        //     if (snapshot.hasData) return DashboardPage();
+        //     if (snapshot.connectionState == ConnectionState.waiting)
+        //       return CircularLoading();
+        //     else
+        //       return LoginPage();
+        //   },
+        // ),
 
         // home: DashboardPage(),
         // home: DummyPage(),
+        home: DashboardPageV2(),
       ),
     );
   }

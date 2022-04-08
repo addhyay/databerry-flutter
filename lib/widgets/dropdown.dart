@@ -15,7 +15,7 @@ late OverlayEntry floatingDropdown;
 bool isDropdownOpen = false;
 bool isError = false;
 String selectionTxt = "";
-List<bool> isSelectedList = List.empty();
+List<bool> isSelectedList = [];
 
 void upadteSelections(int dataItems, int index, String dataValue) {
     if (isSelectedList.isEmpty)

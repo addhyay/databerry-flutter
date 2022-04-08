@@ -13,6 +13,11 @@ class ColorLib {
   static final Color primaryBlue = Color(0xff2f49d1);
   static final Color creamWhite = Color(0xffeaf1f5);
   static final Color fieldWhite = Color(0xffeff0f6);
+  static final Color linePurple = Color(0xff5F2EEA);
+  static final Color lineGreen = Color(0xff4BDE97);
+  static final Color barGreen = Color(0xff52AC0B);
+  static final Color balanceOrange = Color(0xffFFB648);
+  static final Color oceanBlue = Color(0xff0096C7);
 
   //font colors
   static final Color greyDull = Color(0xffc4c4c4).withOpacity(0.5);

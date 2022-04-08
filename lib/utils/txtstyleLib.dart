@@ -14,6 +14,15 @@ class TxtStyleLib {
     color: ColorLib.blackPale,
   );
 
+  static final TextStyle header2Txt = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: DimentionLib.sp25,
+    fontWeight: FontWeight.w800,
+    letterSpacing: 1,
+    fontStyle: FontStyle.normal,
+    color: ColorLib.blackPale,
+  );
+
   static final TextStyle headerTxtDark = TextStyle(
     fontFamily: 'SyneMono',
     fontSize: DimentionLib.sp50,
@@ -109,5 +118,78 @@ class TxtStyleLib {
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
     color: ColorLib.greyPale,
+  );
+
+  static final TextStyle tooltipTxt = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: DimentionLib.sp10,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+    color: ColorLib.blackPale,
+  );
+
+  static final TextStyle tabHeaderTxt = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: DimentionLib.sp14,
+    fontWeight: FontWeight.w600,
+    fontStyle: FontStyle.normal,
+    color: ColorLib.huePrimaryBlueDull,
+  );
+
+  static final TextStyle analyticsCardHeaderTxt = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: DimentionLib.sp17,
+    fontWeight: FontWeight.w600,
+    fontStyle: FontStyle.normal,
+    color: ColorLib.blackPale,
+  );
+
+  static final TextStyle chartTitleTxt = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: DimentionLib.sp13,
+    fontWeight: FontWeight.w600,
+    fontStyle: FontStyle.normal,
+    color: ColorLib.blackPale,
+  );
+
+  static final TextStyle analyticsCardLableTxt = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: DimentionLib.sp12,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+    color: ColorLib.greySpace,
+  );
+
+  static final TextStyle analyticsCardPrecentUPTxt = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: DimentionLib.sp12,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+    color: ColorLib.lineGreen,
+  );
+
+  static final TextStyle analyticsCardPrecentUPBalanceTxt = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: DimentionLib.sp12,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+    color: ColorLib.balanceOrange,
+  );
+
+  static final TextStyle analyticsCardPercentDOWNTxt = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: DimentionLib.sp12,
+    fontWeight: FontWeight.w500,
+    fontStyle: FontStyle.normal,
+    color: ColorLib.errorColor,
+  );
+
+  static final TextStyle chartHeaderTxt = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: DimentionLib.sp20,
+    fontWeight: FontWeight.w800,
+    letterSpacing: 1,
+    fontStyle: FontStyle.normal,
+    color: ColorLib.blackPale,
   );
 }
