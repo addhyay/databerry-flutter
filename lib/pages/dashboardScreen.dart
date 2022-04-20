@@ -8,6 +8,7 @@ import 'package:sales_cast/utils/dimentionLib.dart';
 import 'package:sales_cast/utils/inputBorderLib.dart';
 import 'package:sales_cast/utils/stringLib.dart';
 import 'package:sales_cast/utils/txtstyleLib.dart';
+import 'package:sales_cast/widgets/circularLoading.dart';
 import 'package:sales_cast/widgets/dropdown.dart';
 import 'package:sales_cast/widgets/primerBlueBtn.dart';
 import 'package:sales_cast/widgets/radioButtons.dart';
@@ -276,7 +277,41 @@ class DashboardPage extends StatelessWidget {
                         bottomRight: Radius.circular(DimentionLib.r15),
                       ),
                     ),
-                    child: Center(),
+                    child: Center(
+                      child: Container(
+                        width: DimentionLib.w418,
+                        height: DimentionLib.w418,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(DimentionLib.r15),
+                          color: ColorLib.white,
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          vertical: DimentionLib.w20,
+                          horizontal: DimentionLib.w20,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Txt(
+                              text: "Predicted Sale",
+                              style: TxtStyleLib.header2Txt,
+                            ),
+                            SizedBox(height: DimentionLib.h20),
+                            FutureBuilder(
+                              builder: (context, snapshot) {
+                                if (snapshot.hasData)
+                                  return Txt(
+                                    text: "text",
+                                    style: TxtStyleLib.degreeTxt,
+                                  );
+                                else
+                                  return CircularLoading();
+                              },
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

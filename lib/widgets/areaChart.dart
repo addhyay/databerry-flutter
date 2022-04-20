@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sales_cast/models/chartDataModel.dart';
+import 'package:get/get.dart';
+import 'package:sales_cast/controllers/dashboardController_v2.dart';
+import 'package:sales_cast/models/areaChartModel.dart';
 import 'package:sales_cast/utils/colorLib.dart';
 import 'package:sales_cast/utils/dimentionLib.dart';
+import 'package:sales_cast/utils/stringLib.dart';
 import 'package:sales_cast/utils/txtstyleLib.dart';
+import 'package:sales_cast/widgets/circularLoading.dart';
 import 'package:sales_cast/widgets/txt.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -13,30 +17,19 @@ class AreaChart extends StatelessWidget {
     this.enableTooltip: false,
     this.isGained: true,
     this.percentValue: 50.12,
+    this.prefixCurrency: "₹",
   }) : super(key: key);
 
   final String lable;
   final bool enableTooltip;
   final bool isGained;
   final double percentValue;
+  final String prefixCurrency;
+
+  final controller = Get.put(DashboardControllerV2());
 
   @override
   Widget build(BuildContext context) {
-    final List<ChartData> dataPoints = [
-      ChartData("Jan", 35),
-      ChartData("Feb", 13),
-      ChartData("Mar", 34),
-      ChartData("Apr", 27),
-      ChartData("May", 40),
-      ChartData("Jun", 87),
-      ChartData("Jul", 36),
-      ChartData("Aug", 98),
-      ChartData("Sep", 78),
-      ChartData("Oct", 50),
-      ChartData("Nov", 12),
-      ChartData("Dec", 10),
-    ];
-
     return Container(
       width: DimentionLib.w375,
       height: DimentionLib.h525,
@@ -48,7 +41,12 @@ class AreaChart extends StatelessWidget {
         children: [
           SizedBox(height: DimentionLib.h34),
           Txt(text: lable, style: TxtStyleLib.chartTitleTxt),
-          Txt(text: "Є682.5", style: TxtStyleLib.header2Txt),
+          Obx(
+            () => Txt(
+              text: prefixCurrency + " " + controller.totalSalesofStores.value.toInt().toString(),
+              style: TxtStyleLib.header2Txt,
+            ),
+          ),
           SizedBox(height: DimentionLib.h5),
           Container(
             decoration: BoxDecoration(
@@ -68,52 +66,61 @@ class AreaChart extends StatelessWidget {
           Container(
             height: DimentionLib.h324,
             width: DimentionLib.w375,
-            child: SfCartesianChart(
-              plotAreaBorderWidth: 0,
-              primaryXAxis: CategoryAxis(
-                majorGridLines: MajorGridLines(width: 0),
-                majorTickLines: MajorTickLines(width: 0),
-                axisLine: AxisLine(width: 0),
-                isVisible: false,
-              ),
-              primaryYAxis: NumericAxis(
-                majorGridLines: MajorGridLines(width: 0),
-                majorTickLines: MajorTickLines(width: 0),
-                axisLine: AxisLine(width: 0),
-                isVisible: false,
-              ),
-              tooltipBehavior: TooltipBehavior(
-                enable: true,
-                shared: true,
-                color: ColorLib.creamWhite,
-                shadowColor: ColorLib.transp,
-                textStyle: TxtStyleLib.tooltipTxt,
-                format: "Rs. point.yK",
-                duration: 2,
-                borderWidth: 0,
-                decimalPlaces: 2,
-                animationDuration: 2,
-                opacity: 0.65,
-              ),
-              series: [
-                SplineAreaSeries<ChartData, String>(
-                  gradient: LinearGradient(
-                    colors: [
-                      ColorLib.huePrimaryBlue.withOpacity(0.7),
-                      ColorLib.white,
+            child: FutureBuilder(
+              future: controller.getData("assets/json/sales_per_store.json"),
+              builder: (context, snapshot) {
+                if (snapshot.hasData)
+                  return SfCartesianChart(
+                    plotAreaBorderWidth: 0,
+                    primaryXAxis: NumericAxis(
+                      majorGridLines: MajorGridLines(width: 0),
+                      majorTickLines: MajorTickLines(width: 0),
+                      axisLine: AxisLine(width: 0),
+                      isVisible: false,
+                    ),
+                    primaryYAxis: NumericAxis(
+                      majorGridLines: MajorGridLines(width: 0),
+                      majorTickLines: MajorTickLines(width: 0),
+                      axisLine: AxisLine(width: 0),
+                      isVisible: false,
+                    ),
+                    tooltipBehavior: TooltipBehavior(
+                      enable: true,
+                      shared: true,
+                      color: ColorLib.creamWhite,
+                      shadowColor: ColorLib.transp,
+                      textStyle: TxtStyleLib.tooltipTxt,
+                      format: "Rs. point.yM",
+                      duration: 2,
+                      borderWidth: 0,
+                      decimalPlaces: 2,
+                      animationDuration: 2,
+                      opacity: 0.65,
+                    ),
+                    series: [
+                      SplineAreaSeries(
+                        gradient: LinearGradient(
+                          colors: [
+                            ColorLib.huePrimaryBlue.withOpacity(0.7),
+                            ColorLib.white,
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                        enableTooltip: enableTooltip,
+                        borderDrawMode: BorderDrawMode.top,
+                        borderColor: ColorLib.huePrimaryBlue,
+                        borderWidth: 3,
+                        dataSource: controller.storeSales,
+                        xValueMapper: (AreaChartModel data, _) => data.storeNum,
+                        yValueMapper: (AreaChartModel data, _) =>
+                            data.salesValue,
+                      )
                     ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                  enableTooltip: enableTooltip,
-                  borderDrawMode: BorderDrawMode.top,
-                  borderColor: ColorLib.huePrimaryBlue,
-                  borderWidth: 3,
-                  dataSource: dataPoints,
-                  xValueMapper: (ChartData data, _) => data.x,
-                  yValueMapper: (ChartData data, _) => data.y,
-                )
-              ],
+                  );
+                else
+                  return CircularLoading();
+              },
             ),
           )
         ],

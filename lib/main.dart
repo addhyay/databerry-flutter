@@ -5,9 +5,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sales_cast/controllers/dashboardController_v2.dart';
 import 'package:sales_cast/controllers/loginController.dart';
 import 'package:sales_cast/pages/dashboardScreen_v2.dart';
 import 'package:sales_cast/pages/dummyScreen.dart';
+import 'package:sales_cast/pages/fraction_home.dart';
 import 'package:sales_cast/pages/loginScreen.dart';
 import 'package:sales_cast/pages/dashboardScreen.dart';
 import 'package:sales_cast/utils/colorLib.dart';
@@ -27,8 +29,10 @@ class SalesCast extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(1440, 1150),
-      builder: () => MaterialApp(
+      builder: (BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
+        scrollBehavior:
+            ScrollConfiguration.of(context).copyWith(scrollbars: false),
         theme: ThemeData(
           primaryColor: MaterialColorLib.primaryBlueSwatch,
         ),
@@ -46,6 +50,7 @@ class SalesCast extends StatelessWidget {
         // home: DashboardPage(),
         // home: DummyPage(),
         home: DashboardPageV2(),
+        // home: DummyScreen(),
       ),
     );
   }

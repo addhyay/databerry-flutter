@@ -31,6 +31,10 @@ class StringLib {
   static final String holidayHeader = "Holiday";
   static final String tempratureHeader = "Temprature";
 
+  //currency Strings
+  static final String dollar = "\$";
+  static final String rupees = "₹";
+
   //generic strings
   static final String rememberme = "Remember me";
   static final String forgotpass = "Forgot password?";
@@ -43,7 +47,6 @@ class StringLib {
   static final String signup = "Sign up";
   static final String sendmail = "Send email";
   static final String resendmail = "Resend email";
-  static final String predictSale = "Predict Sales";
 
   //hint strings
   static final String emailHint = "Enter your email";
@@ -80,13 +83,10 @@ class StringLib {
   static final String settingTxt = "Settings";
 
   //card Strings
-  static final String totalSales = 'Total Sales';
-  static final String expectedSales = "Expected Sales";
   static final String actualSales = "Actual Sales";
+  static final String predictSale = "Predict Sales";
   static final String totalProductsSold = "Total Products Sold";
   static final String lastMonth = "Last month"; 
-  static final String last6mo  = "Last 6 months";
-  static final String pervious = "Previous";
 
   //chart Strings
   static final String monthlyAvg = "Monthly Average Sales";

@@ -22,8 +22,9 @@ class DimentionLib {
   static var h375 = 375.h;
   static var h525 = 525.h;
   static var h867 = 867.h;
+  static var h1030 = 1030.h;
+  static var h1040 = 1040.h;
   static var h1150 = 1150.h;
-  static var h2000 = 1030.h;
 
   //width
   static var w0 = 0.w;
