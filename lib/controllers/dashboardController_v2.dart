@@ -62,10 +62,6 @@ class DashboardControllerV2 extends GetxController {
     print("4");
     getBarChartdata();
     print("5");
-    // getPreviousMonthPredictedSales();
-    // print("5");
-    // getPreviousMonthActualSales();
-    // print("6");
   }
 
   void updateSelection(int index) {
@@ -136,18 +132,6 @@ class DashboardControllerV2 extends GetxController {
           .add(AreaChartModel(data[i]["Store"], data[i]["Sales in million"]));
     }
   }
-
-  // Future getPreviousMonthPredictedSales() async {
-  //   final prevMonth = new DateTime.now().month - 1;
-  //   previousMonthPredictedSales.value = await predictedSales[prevMonth].salesValue;
-  // }
-
-  // Future getPreviousMonthActualSales() async {
-  //   final prevMonth = new DateTime.now().month - 1;
-  //   previousMonthActualSales.value = await actualSales[prevMonth].salesValue;
-  //   print(prevMonth);
-  //   print(predictedSales.length);
-  // }
 
   Future getBarChartdata() async {
     final yr2010 = await getData(PathLib.predictiedVsActualSales2010);

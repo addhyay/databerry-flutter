@@ -7,7 +7,7 @@ import 'package:sales_cast/controllers/dashboardController_v2.dart';
 import 'package:sales_cast/pages/fraction_Notification.dart';
 import 'package:sales_cast/pages/fraction_aboutUs.dart';
 import 'package:sales_cast/pages/fraction_appearance.dart';
-import 'package:sales_cast/pages/fraction_filters.dart';
+import 'package:sales_cast/pages/fraction_predictSale.dart';
 import 'package:sales_cast/pages/fraction_home.dart';
 import 'package:sales_cast/pages/fraction_setting.dart';
 import 'package:sales_cast/utils/colorLib.dart';
@@ -276,9 +276,12 @@ class DashboardPageV2 extends StatelessWidget {
                                 HomeFraction(
                                   scrollController: controller.scrollController,
                                 ),
-                                FilterFraction(
+                                PredictSaleFraction(
                                   scrollController: controller.scrollController,
                                 ),
+                                // HomeFraction(
+                                //   scrollController: controller.scrollController,
+                                // ),
                                 NotificationFraction(
                                   scrollController: controller.scrollController,
                                 ),

@@ -41,6 +41,7 @@ class StringLib {
   static final String gotosignup = "Don't have an account?";
   static final String gotologin = "Already have an account?";
   static final String predictedSales = "Predicted Sales";
+  static final String predictSaleScreenTxt = "Please fill out the form and then click on predict sale button at bottom of form.";
 
   //btn strings
   static final String signin = "Sign in";
@@ -75,7 +76,7 @@ class StringLib {
 
   //tab bar Strings
   static final String dashboardTxt = "Dashboard";
-  static final String filtersTxt = "Filters";
+  static final String predictSaleTxt = "Predict Sale";
   static final String notificationTxt = "Notifications";
   static final String aboutUsTxt = "About Us";
   static final String systemTxt = "SYSTEM";
@@ -91,6 +92,6 @@ class StringLib {
   //chart Strings
   static final String monthlyAvg = "Monthly Average Sales";
   static final String yearlySale = "Yearly Sales";
-  static final String totalYearlySales = "Total Sales of 40+ Walmart Store since last 5 years";
+  static final String totalYearlySales = "Total Sales of 40+ Walmart Store of past 3 years";
   static final String subtitleMonthlySales = "Daywise sales done by point distributions";
 }

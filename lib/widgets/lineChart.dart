@@ -134,8 +134,7 @@ class LineChart extends StatelessWidget {
           Container(
             height: DimentionLib.h375,
             child: FutureBuilder(
-              future:
-                  controller.getData(PathLib.predictiedVsActualSales2010),
+              future: controller.getData(PathLib.predictiedVsActualSales2010),
               builder: (context, snapshot) {
                 if (snapshot.hasData)
                   return SfCartesianChart(
@@ -157,7 +156,7 @@ class LineChart extends StatelessWidget {
                       color: ColorLib.creamWhite,
                       shadowColor: ColorLib.transp,
                       textStyle: TxtStyleLib.tooltipTxt,
-                      format: prefixCurrency + " " + "point.y",
+                      format: prefixCurrency + " " + "point.yM",
                       duration: 2,
                       borderWidth: 0,
                       decimalPlaces: 2,

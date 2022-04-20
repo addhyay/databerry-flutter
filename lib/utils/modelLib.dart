@@ -10,7 +10,7 @@ class ModelListLib {
       iconImg: SvgPicture.asset(PathLib.svgHome),
     ),
     TabButtonModel(
-      lable: StringLib.filtersTxt,
+      lable: StringLib.predictSaleTxt,
       iconImg: SvgPicture.asset(PathLib.svgFolder),
     ),
     TabButtonModel(

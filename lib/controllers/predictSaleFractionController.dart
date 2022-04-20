@@ -7,13 +7,14 @@ import 'package:sales_cast/utils/stringLib.dart';
 import 'package:sales_cast/utils/txtstyleLib.dart';
 import 'package:sales_cast/widgets/txt.dart';
 
-class DashboardScreenController extends GetxController {
-  final GlobalKey<FormState> dashboardFormKey = GlobalKey<FormState>();
+class PredictSaleFractionController extends GetxController {
+  final GlobalKey<FormState> predictFormKey = GlobalKey<FormState>();
   late TextEditingController storeController,
       departmentController,
       tempratureController;
 
   RxBool tempUnit = false.obs;
+  RxBool isClicked = false.obs;
   RxDouble temp = 0.0.obs;
   String storeTypeTxt = "A", holidayTxt = "TRUE";
 
@@ -96,8 +97,9 @@ class DashboardScreenController extends GetxController {
   }
 
   void checkAndPredict(BuildContext context) {
-    bool isValid = dashboardFormKey.currentState!.validate();
+    bool isValid = predictFormKey.currentState!.validate();
     if (!isValid) return;
+    isClicked.value = true;
     //* Do something about sending info to json and so on
   }
 }

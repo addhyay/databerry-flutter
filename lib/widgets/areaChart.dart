@@ -43,7 +43,9 @@ class AreaChart extends StatelessWidget {
           Txt(text: lable, style: TxtStyleLib.chartTitleTxt),
           Obx(
             () => Txt(
-              text: prefixCurrency + " " + controller.totalSalesofStores.value.toInt().toString(),
+              text: prefixCurrency +
+                  " " +
+                  controller.totalSalesofStores.value.toInt().toString(),
               style: TxtStyleLib.header2Txt,
             ),
           ),
@@ -90,7 +92,7 @@ class AreaChart extends StatelessWidget {
                       color: ColorLib.creamWhite,
                       shadowColor: ColorLib.transp,
                       textStyle: TxtStyleLib.tooltipTxt,
-                      format: "Rs. point.yM",
+                      format: prefixCurrency + " " + "point.yM",
                       duration: 2,
                       borderWidth: 0,
                       decimalPlaces: 2,

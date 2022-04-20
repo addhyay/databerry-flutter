@@ -11,7 +11,6 @@ import 'package:sales_cast/pages/dashboardScreen_v2.dart';
 import 'package:sales_cast/pages/dummyScreen.dart';
 import 'package:sales_cast/pages/fraction_home.dart';
 import 'package:sales_cast/pages/loginScreen.dart';
-import 'package:sales_cast/pages/dashboardScreen.dart';
 import 'package:sales_cast/utils/colorLib.dart';
 import 'package:sales_cast/widgets/circularLoading.dart';
 
@@ -48,7 +47,6 @@ class SalesCast extends StatelessWidget {
         // ),
 
         // home: DashboardPage(),
-        // home: DummyPage(),
         home: DashboardPageV2(),
         // home: DummyScreen(),
       ),

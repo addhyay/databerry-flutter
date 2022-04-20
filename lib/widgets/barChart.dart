@@ -19,12 +19,14 @@ class BarChart extends StatelessWidget {
     required this.lable,
     required this.subHeader,
     this.enableTooltip: false,
+    this.prefixCurrency: "₹",
     this.yearList: const ["2010", "2011", "2012"],
     this.valueList: const [654680, 100124, 20125],
   }) : super(key: key);
 
   final String lable, subHeader;
   final bool enableTooltip;
+  final String prefixCurrency;
   List<String> yearList;
   List<double> valueList;
 
@@ -92,7 +94,7 @@ class BarChart extends StatelessWidget {
                       color: ColorLib.creamWhite,
                       shadowColor: ColorLib.transp,
                       textStyle: TxtStyleLib.tooltipTxt,
-                      format: "Rs. point.yK",
+                      format: prefixCurrency + " " + "point.yM",
                       duration: 2,
                       borderWidth: 0,
                       decimalPlaces: 2,

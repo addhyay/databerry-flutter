@@ -91,11 +91,13 @@ class HomeFraction extends StatelessWidget {
                     AreaChartCyan(
                       enableTooltip: true,
                       lable: StringLib.monthlyAvg,
+                      prefixCurrency: StringLib.dollar,
                       subHeader: StringLib.subtitleMonthlySales,
                     ),
                     BarChart(
                       enableTooltip: true,
                       lable: "Yearly Sales",
+                      prefixCurrency: StringLib.dollar,
                       subHeader: StringLib.totalYearlySales,
                     ),
                   ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sales_cast/controllers/dashboardController.dart';
+import 'package:sales_cast/controllers/predictSaleFractionController.dart';
 import 'package:sales_cast/utils/colorLib.dart';
 import 'package:sales_cast/utils/dimentionLib.dart';
 import 'package:sales_cast/utils/stringLib.dart';
@@ -21,13 +21,13 @@ class CustomRadios extends StatefulWidget {
 }
 
 class _CustomRadiosState extends State<CustomRadios> {
-  final controller = Get.put(DashboardScreenController());
+  final controller = Get.put(PredictSaleFractionController());
   int selected = 0;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         for (int i = 0; i < widget.lableList.length; i++)
           GestureDetector(

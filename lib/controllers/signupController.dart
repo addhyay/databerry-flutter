@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sales_cast/models/userModel.dart';
-import 'package:sales_cast/pages/dashboardScreen.dart';
+import 'package:sales_cast/pages/dashboardScreen_v2.dart';
 import 'package:sales_cast/utils/colorLib.dart';
 import 'package:sales_cast/utils/stringLib.dart';
 import 'package:sales_cast/utils/txtstyleLib.dart';
@@ -105,7 +105,7 @@ class SignupPageController extends GetxController {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (BuildContext context) => DashboardPage(),
+          builder: (BuildContext context) => DashboardPageV2(),
         ),
       );
     } on FirebaseAuthException catch (error) {
